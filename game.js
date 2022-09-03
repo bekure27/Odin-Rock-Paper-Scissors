@@ -1,3 +1,9 @@
+let playerName = prompt("Enter Your Name: ");
+if (playerName === null || playerName === ""){
+    playerName = "No Name Player";
+} 
+console.log(typeof playerName);
+
 function getComputerChoice(){
     let playWord = ["rock","paper","scissor"];
     let randomWord = playWord[Math.floor(Math.random()*playWord.length)];
@@ -7,6 +13,7 @@ function getComputerChoice(){
 function getPlayerChoice(){
     let playerSelection = prompt("Enter your word ('Rock','Paper','Scissor')");
     if(playerSelection === null){
+        playerName = prompt("Enter Your Name: ");
         playerSelection = prompt("Enter your word ('Rock','Paper','Scissor')");
     }
     playerSelection = playerSelection.toLowerCase();
@@ -49,7 +56,7 @@ function game (){
 
     if(playerScore > computerScore){
         console.log("Game Over");
-        console.log(`player win! ${playerScore} rounds from 5`);
+        console.log(`${playerName} win! ${playerScore} rounds from 5`);
     }
     else if(computerScore > playerScore){
         console.log("Game Over");
